@@ -1,9 +1,5 @@
 <?php
 
-define("vikas.y@moldtekindia.com.usgt2", "Your salesforce username");
-define("mttl@123", "salesforce password");
-
-
 require_once ('soapclient/SforcePartnerClient.php');
 
 $mySforceConnection = new SforcePartnerClient();
