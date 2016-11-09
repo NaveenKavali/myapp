@@ -1,5 +1,5 @@
 <?php
-$link = mysqli_connect('166.62.28.136', 'gadvise', 'p@ssw0rd');
+$link = mysqli_connect('11.58.0.19', 'gadvise', 'p@ssw0rd');
 if (!$link) {
     die('Could not connect: ' . mysqli_error());
 }
