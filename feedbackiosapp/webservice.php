@@ -1,5 +1,8 @@
 <?php
-mysqli_connect("localhost","root","123");
-mysqli_select_db("hello");
+$link = mysql_connect('localhost', 'mysql_user', 'mysql_password');
+if (!$link) {
+    die('Could not connect: ' . mysql_error());
+}
+echo 'Connected successfully';
+mysql_close($link);
 ?>
-
