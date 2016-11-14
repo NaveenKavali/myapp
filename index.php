@@ -1,14 +1,14 @@
 <?php
 define ("salesforce_username", 'vikas.y@moldtekindia.com.usgt2');
 define ("salesforce_password", 'mttl@123');
-define ("salesforce_wsdl", 'soapclient/enterprise.wsdl.xml');
+define ("salesforce_wsdl", 'soapclient/partnernew.wsdl.xml');
  
-require_once ('soapclient/SforceEnterpriseClient.php');
+require_once ('soapclient/SforcePartnerClient.php');
 ini_set('soap.wsdl_cache_enabled', 0);
 ini_set('soap.wsdl_cache_ttl', 0);
  
 //Create a new Salesforce Partner object
-$connection = new SforceEnterpriseClient();
+$connection = new SforcePartnerClient();
  
 //Create the SOAP connection to Salesforce
 try {
