@@ -11,5 +11,6 @@ header('Content-type: application/json');
 
 // send the result now
 echo json_encode($result_json);
-
+$var = json_decode($json, true); 
+echo $var;
 ?>
