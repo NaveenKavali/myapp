@@ -1,42 +1,13 @@
 <?php
+require_once ('soapclient/SforceEnterpriseClient.php');
 
-$salesforce_username = "vikas.y@moldtekindia.com.usgt2";
-$salesforce_password = "mttl@123";
-$salesforce_wsdl = 'soapclient/partnernew.wsdl.xml';
- 
-require_once ('soapclient/SforcePartnerClient.php');
-ini_set('soap.wsdl_cache_enabled', 0);
-ini_set('soap.wsdl_cache_ttl', 0);
- 
-//Create a new Salesforce Partner object
-$connection = new SforcePartnerClient();
- 
-//Create the SOAP connection to Salesforce
-try {
- $connection->createConnection($salesforce_wsdl);
-} catch (Exception $e) {
- //Salesforce could be down or error in configuration
- //Check your WSDL path. Handle this exception.
-}
- 
-//Pass login details to Salesforce
-try {
- $connection->login($salesforce_username, $salesforce_password);
-} catch (Exception $e) {
- //Make sure your username and password is correct
- //Otherwise, handle this exception
-}
-//Obtaining object containing record data with Lead ID
-$queryLead = "SELECT * FROM Contact";
-$resultLead = $connection->query($queryLead);
-
- 
-//Checking if the query for a Lead with ID returns an object
-if ($resultLead->size) {
- //The lead exists
- //Display or parse values from the object
+$mySforceConnection = new SforceEnterpriseClient();
+$mySoapClient = $mySforceConnection->createConnection("enterprise.wsdl.xml");
+$mylogin = $mySforceConnection->login("vikas.y@moldtekindia.com.usgt2", "mttl@123");
+if ($mylogin){
+ echo 'yes';
 }
 else {
- echo "This lead does not exist in Salesforce.";
+echo 'not';
 }
 ?>
