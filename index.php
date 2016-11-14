@@ -1,7 +1,8 @@
 <?php
-define ("salesforce_username", 'vikas.y@moldtekindia.com.usgt2');
-define ("salesforce_password", 'mttl@123');
-define ("salesforce_wsdl", 'soapclient/partnernew.wsdl.xml');
+
+$salesforce_username = "vikas.y@moldtekindia.com.usgt2";
+$salesforce_password = "mttl@123";
+$salesforce_wsdl = 'soapclient/partnernew.wsdl.xml';
  
 require_once ('soapclient/SforcePartnerClient.php');
 ini_set('soap.wsdl_cache_enabled', 0);
@@ -12,7 +13,7 @@ $connection = new SforcePartnerClient();
  
 //Create the SOAP connection to Salesforce
 try {
- $connection->createConnection(salesforce_wsdl);
+ $connection->createConnection($salesforce_wsdl);
 } catch (Exception $e) {
  //Salesforce could be down or error in configuration
  //Check your WSDL path. Handle this exception.
@@ -20,7 +21,7 @@ try {
  
 //Pass login details to Salesforce
 try {
- $connection->login(salesforce_username, salesforce_password);
+ $connection->login($salesforce_username, $salesforce_password);
 } catch (Exception $e) {
  //Make sure your username and password is correct
  //Otherwise, handle this exception
