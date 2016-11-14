@@ -9,6 +9,6 @@ header('Content-type: application/json');
 echo json_encode($result_json);
  $json = file_get_contents('https://feedbackiosapp.herokuapp.com'); 
  $obj = json_decode($json, true);
-echo $obj;
+print_r($obj);
 
 ?>
