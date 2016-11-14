@@ -2,15 +2,21 @@
 
 $result_json = array('name' => 'test', 'age' => '16');
 
-// headers for not caching the results
-header('Cache-Control: no-cache, must-revalidate');
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-
 // headers to tell that result is JSON
 header('Content-type: application/json');
 
 // send the result now
 echo json_encode($result_json);
-$var = json_decode($json, true); 
-echo $var;
+
+$asObjects = json_decode($string);
+
+$asAssociativeArray = json_decode($string, true);
+
+foreach ($asObjects as $obj) {
+    echo $obj->name;
+}
+
+foreach ($asAssociativeArray as $arr) {
+    echo $arr['name'];
+}
 ?>
