@@ -1,22 +1,14 @@
 <?php 
 
-$result_json = array('name' => 'test', 'age' => '16');
+
 
 // headers to tell that result is JSON
 header('Content-type: application/json');
 
 // send the result now
 echo json_encode($result_json);
+ $json = file_get_contents('https://feedbackiosapp.herokuapp.com/feedbackiosapp/webservice.php'); 
+ $obj = json_decode($json, true);
+echo $obj;
 
-$asObjects = json_decode($string);
-
-$asAssociativeArray = json_decode($string, true);
-
-foreach ($asObjects as $obj) {
-    echo $obj->name;
-}
-
-foreach ($asAssociativeArray as $arr) {
-    echo $arr['name'];
-}
 ?>
