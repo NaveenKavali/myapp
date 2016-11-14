@@ -7,7 +7,7 @@ if (!$db_connection) {
 }
 echo 'Connected successfully';
 
-$row = "select FirstName, Email from Contact";
+$row = mysqli_query("select FirstName, Email from Contact");
 
 print_r($row);
 ?>
