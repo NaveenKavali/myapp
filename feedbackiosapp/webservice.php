@@ -6,4 +6,8 @@ if (!$db_connection) {
     die('Could not connect: ' . mysqli_error());
 }
 echo 'Connected successfully';
+
+$row = "select FirstName, Email from Contact";
+
+print_r($row);
 ?>
