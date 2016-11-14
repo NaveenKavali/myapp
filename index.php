@@ -26,7 +26,7 @@ try {
  //Otherwise, handle this exception
 }
 //Obtaining object containing record data with Lead ID
-$queryLead = "SELECT LastName, FirstName, Phone, Email FROM Contact";
+$queryLead = "SELECT * FROM Contact";
 $resultLead = $connection->query($queryLead);
 
  
